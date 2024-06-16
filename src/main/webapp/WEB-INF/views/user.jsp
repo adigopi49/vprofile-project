@@ -46,7 +46,7 @@ body{
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="#technologies">TECHNOLOGIES</a></li>
+                                <li><a href="#technologies">Gopi_TECHNOLOGIES</a></li>
                                 <li><a href="#about">ABOUT</a></li>
                                 <li><a href="#contact">CONTACT</a></li>
                                 <li><a href="#">BLOG</a></li>
