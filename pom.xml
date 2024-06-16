@@ -173,13 +173,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://18.61.154.218:8081/repository/release/</url>
+	      <url>http://18.61.173.170:9001/repository/release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://18.61.154.218:8081/repository/snap/</url>
+	      <url>http://18.61.173.170:9001/repository/snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
