@@ -1,0 +1,50 @@
+version: "3.8"
+services:
+  mysql:
+    build:
+      context: ./Docker-files/db
+    image: gopiadi/db
+    ports:
+      - "3306:3306"
+    volumes:
+      - vpdb:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=vprodbpass
+
+  app:
+    build:
+      context: ./Docker-files/app
+    image: gopiadi/app
+    ports:
+      - "8080:8080"
+    volumes:
+      - vpapp:/usr/local/tomcat/webapps/
+    depends_on:
+      - mysql
+
+  memcache:
+    image: memcached
+    ports:
+      - "11211:11211"
+
+  web:
+    build:
+      context: ./Docker-files/web
+    image: gopiadi/web
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+
+  rmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"  # Management UI for RabbitMQ
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+
+volumes:
+  vpdb: {}
+  vpapp: {}
